@@ -59,6 +59,69 @@
         left: 0;
     }
 }
+@media (min-width: 768px) {  
+    .search-section .filter-form {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 10px;
+        width: auto;
+        max-width: 100%;
+        padding: 15px;
+        background: white;
+        border-radius: 5px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        position: absolute;
+        left: 0;
+        top: 50px;
+    }
+
+    .search-section .filter-form label {
+        flex: 0 0 auto;
+        font-weight: bold;
+        margin: 0;
+        color: #333;
+        white-space: nowrap; /* Prevents labels from breaking */
+    }
+
+    .search-section .filter-form select {
+        flex: 0 0 auto;
+        min-width: 150px; /* Ensures dropdowns have enough space */
+        padding: 5px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        background: #f9f9f9;
+    }
+
+    .search-section .filter-form button {
+        flex: 0 0 auto;
+        padding: 8px 12px;
+        background-color: green;
+        color: white;
+        border: none;
+        cursor: pointer;
+        border-radius: 5px;
+    }
+
+    /* Adjust spacing for select fields */
+    .search-section .filter-form > div {
+        display: flex;
+        flex-wrap: nowrap;
+        align-items: center;
+        gap: 10px;
+        width: auto;
+    }
+}
+
+@media (max-width: 767px) {
+    .search-section .filter-form {
+        display: block;
+        width: 100%;
+    }
+}
+
+
 
     </style>
 </head>
@@ -67,7 +130,7 @@
     <nav class="navbar">
         <div class="navbar-container">
             <a href="#" class="logo">
-                <img src="./images/logo.png" alt="Enroll Now" >
+                <img src="./images/logo1.png" alt="Enroll Now" >
             </a>
             <div class="menu-icon" onclick="toggleMenu()">☰</div>
             <ul class="nav-links">
@@ -382,7 +445,7 @@
             <!-- About Us -->
             <div class="footer-col">
                 <h3>About Us</h3>
-                <img src="./images/logo.png" alt="Logo" class="footer-logo" height="80px">
+                <img src="./images/logo1.png" alt="Logo" class="footer-logo" height="80px">
                 <p>
                     Our platform provides top-quality education and career resources to help students and professionals achieve their goals.
                 </p>
