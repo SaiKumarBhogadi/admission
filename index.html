@@ -6,13 +6,68 @@
     <title>Document</title>
     <link rel="stylesheet" href="./home.css">
     <script src="https://kit.fontawesome.com/1393973ad4.js" crossorigin="anonymous"></script>
+    <style>
+        /* Filter Button */
+.search-section .filter-btn {
+    background-color: #673AB7; /* Violet theme */
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+}
+
+.search-section .filter-btn:hover {
+    background-color: #512DA8;
+}
+
+/* Filter Form */
+.search-section .filter-form {
+    position: absolute;
+    top: 50px;
+    left: 0;
+    background-color: white;
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    z-index: 100;
+    display: none;
+}
+
+.search-section .filter-form label {
+    display: block;
+    font-weight: bold;
+    margin-top: 10px;
+    color: #333;
+}
+
+.search-section .filter-form select {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background: #f9f9f9;
+}
+
+@media (max-width: 600px) {
+    .search-section .filter-form {
+        width: 100%;
+        left: 0;
+    }
+}
+
+    </style>
 </head>
 <body>
 
     <nav class="navbar">
         <div class="navbar-container">
             <a href="#" class="logo">
-                <img src="./images/Enroll Now logo.png" alt="Enroll Now">
+                <img src="./images/logo.png" alt="Enroll Now" >
             </a>
             <div class="menu-icon" onclick="toggleMenu()">☰</div>
             <ul class="nav-links">
@@ -27,7 +82,7 @@
                 </li>
                 <li><a href="#">Updates</a></li>
                 <li><a href="#">Contact</a></li>
-                <li><a href="./register.html">register</a></li>
+                <li><a href="./register.html">Academia Enroll</a></li>
             </ul>
         </div>
     </nav>
@@ -39,7 +94,7 @@
         <div class="hero-overlay"></div>
         <div class="hero-content">
             <h1 class="fade-in">Your Gateway to Top Schools & Colleges</h1>
-            <p class="slide-up">Find and Apply to the Best Educational Institutions with Ease</p>
+            <p class="slide-up">Unlock Opportunities at Top Schools & Colleges</p>
             <div class="hero-buttons">
                 <a href="#" class="btn primary-btn">Explore Admissions</a>
                 <a href="#" class="btn secondary-btn">Join as an Institution</a>
@@ -47,6 +102,68 @@
             <div class="search-bar">
                 <input type="text" placeholder="Search Schools, Colleges..." />
                 <button class="search-btn">Search</button>
+                <div class="search-section">
+                    <!-- <button class="search-btn">Search</button> -->
+                    <button class="filter-btn">Search with Filter</button>
+                    <div class="filter-form" style="display: none;">
+                        <label>Type</label>
+                        <select id="type-select">
+                            <option value="school">--select--</option>
+                            <option value="school">School</option>
+                            <option value="college">College</option>
+                        </select>
+                        <div id="school-filters" style="display: none;">
+                            
+                            <label>State</label>
+                            <select><option>All</option></select>
+                            <label>District</label>
+                            <select><option>All</option></select>
+                            <label>School Name</label>
+                            <select><option>All</option></select>
+                            <label>Class</label>
+                            <select><option>All</option></select>
+                            <button style="padding: 5px;background-color:green; margin-top:5px;color:white;">search</button>
+                        </div>
+                        <div id="college-filters" style="display: none;">
+                            <label>Programme Type</label>
+                            <select><option>UG</option></select>
+                            <label>Programme</label>
+                            <select><option>All</option></select>
+                            <label>State</label>
+                            <select><option>All</option></select>
+                            <label>District</label>
+                            <select><option>All</option></select>
+                            <label>College Name</label>
+                            <select><option>All</option></select>
+                            <button style="padding: 5px;background-color:green; margin-top:5px;color:white;">search</button>
+                        </div>
+                    </div>
+                </div>
+                <script>
+                    document.querySelector('.filter-btn').addEventListener('click', function(event) {
+                        let filterForm = document.querySelector('.filter-form');
+                        filterForm.style.display = filterForm.style.display === 'none' ? 'block' : 'none';
+                        event.stopPropagation();
+                    });
+                    document.addEventListener('click', function(event) {
+                        let filterForm = document.querySelector('.filter-form');
+                        if (!document.querySelector('.filter-btn').contains(event.target) && !filterForm.contains(event.target)) {
+                            filterForm.style.display = 'none';
+                        }
+                    });
+                    document.querySelector('#type-select').addEventListener('change', function() {
+                        let schoolFilters = document.querySelector('#school-filters');
+                        let collegeFilters = document.querySelector('#college-filters');
+                        if (this.value === 'school') {
+                            schoolFilters.style.display = 'block';
+                            collegeFilters.style.display = 'none';
+                        } else {
+                            schoolFilters.style.display = 'none';
+                            collegeFilters.style.display = 'block';
+                        }
+                    });
+                </script>
+                
             </div>
         </div>
     </header>
@@ -125,43 +242,44 @@
     <div class="college-wrapper">
         <div class="college-card">
             <img src="./images/1 (1).png" alt="College 1">
-            <h4>XYZ University</h4>
-            <p>New York, USA</p>
+            <h4>Sri Prakash Vidyaniketan</h4>
+            <p>Visakhapatnam</p>
         </div>
         <div class="college-card">
             <img src="./images/1 (1).png" alt="College 1">
-            <h4>XYZ University</h4>
-            <p>New York, USA</p>
+            <h4>Bhashyam Public School</h4>
+            <p>Guntur
+            </p>
         </div>
         <div class="college-card">
             <img src="./images/1 (1).png" alt="College 1">
-            <h4>XYZ University</h4>
-            <p>New York, USA</p>
+            <h4>Andhra Loyola College</h4>
+            <p>Vijayawada, Krishna</p>
         </div>
         <div class="college-card">
             <img src="./images/1 (1).png" alt="College 1">
-            <h4>XYZ University</h4>
-            <p>New York, USA</p>
+            <h4>Chirec International School </h4>
+            <p>Hyderabad</p>
         </div>
         <div class="college-card">
             <img src="./images/1 (1).png" alt="College 1">
-            <h4>XYZ University</h4>
-            <p>New York, USA</p>
+            <h4>Osmania University</h4>
+            <p>Hyderabad</p>
         </div>
         <div class="college-card">
             <img src="./images/1 (1).png" alt="College 1">
-            <h4>XYZ University</h4>
-            <p>New York, USA</p>
+            <h4>Kennedy High The Global School</h4>
+            <p>Ranga Reddy</p>
         </div>
         <div class="college-card">
-            <img src="https://via.placeholder.com/80" alt="College 2">
-            <h4>ABC Institute</h4>
-            <p>London, UK</p>
+            <img src="./images/1 (1).png" alt="College 2">
+            <h4>GITAM University</h4>
+            <p>Visakhapatnam</p>
         </div>
         <div class="college-card">
-            <img src="https://via.placeholder.com/80" alt="College 3">
-            <h4>LMN College</h4>
-            <p>Sydney, Australia</p>
+            <img src="./images/1 (1).png" alt="College 3">
+            <h4>ICFAI Foundation for Higher Education</h4>
+            <p> Hyderabad</p>
         </div>
     </div>
 </section>
@@ -264,7 +382,7 @@
             <!-- About Us -->
             <div class="footer-col">
                 <h3>About Us</h3>
-                <img src="./images/Enroll Now logo.png" alt="Logo" class="footer-logo" height="80px">
+                <img src="./images/logo.png" alt="Logo" class="footer-logo" height="80px">
                 <p>
                     Our platform provides top-quality education and career resources to help students and professionals achieve their goals.
                 </p>
