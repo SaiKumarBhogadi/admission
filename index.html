@@ -3,325 +3,256 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admission Enquiry</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-    <!-- FontAwesome CDN -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-
-    <link rel="stylesheet" href="./main.css">
+    <title>Document</title>
+    <link rel="stylesheet" href="./home.css">
+    <script src="https://kit.fontawesome.com/1393973ad4.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <div class="top-bar d-none d-md-block">
-        <span>TOP UNIVERSITY | TOP DISTANCE EDUCATION | TOP COLLEGES | ALL UNIVERSITY & COLLEGES | NEWS</span>
-    </div>
-    <div class="middle-bar container d-none d-md-flex justify-content-between align-items-center">
-        <a class="navbar-brand" href="#">
-            <img src="logo.png" alt="Admission Enquiry">
-        </a>
-        <div class="contact-info">
-            <span>Contact No: +91-0000000000 | Email: info@your-email.com</span>
-        </div>
-    </div>
 
-    <!-- Navigation Bar -->
-    <nav class="navbar navbar-expand-lg navbar-dark">
-        <div class="container">
-            <a class="navbar-brand" href="#" id="nav-logo"><img src="logo.png" alt="Admission Enquiry"></a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav mx-auto">
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="coursesDropdown" role="button" data-bs-toggle="dropdown">
-                            COURSES
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li class="dropdown-submenu">
-                                <a class="dropdown-item dropdown-toggle" href="#">Medical</a>
-                                <ul class="dropdown-menu">
-                                    <li class="dropdown-submenu">
-                                        <a class="dropdown-item dropdown-toggle" href="#">Colleges by Degrees</a>
-                                        <ul class="dropdown-menu">
-                                            <li><a class="dropdown-item" href="#">MBBS</a></li>
-                                            <li><a class="dropdown-item" href="#">BDS</a></li>
-                                            <li><a class="dropdown-item" href="#">BAMS</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="dropdown-submenu">
-                                        <a class="dropdown-item dropdown-toggle" href="#">Top Colleges</a>
-                                        <ul class="dropdown-menu">
-                                            <li><a class="dropdown-item" href="#">AIIMS Delhi</a></li>
-                                            <li><a class="dropdown-item" href="#">CMC Vellore</a></li>
-                                            <li><a class="dropdown-item" href="#">JIPMER</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="dropdown-submenu">
-                                        <a class="dropdown-item dropdown-toggle" href="#">Top Universities</a>
-                                        <ul class="dropdown-menu">
-                                            <li><a class="dropdown-item" href="#">Harvard Medical School</a></li>
-                                            <li><a class="dropdown-item" href="#">Johns Hopkins University</a></li>
-                                            <li><a class="dropdown-item" href="#">Mayo Clinic</a></li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="dropdown-submenu">
-                                <a class="dropdown-item dropdown-toggle" href="#">Enineering</a>
-                                <ul class="dropdown-menu">
-                                    <li class="dropdown-submenu">
-                                        <a class="dropdown-item dropdown-toggle" href="#">Colleges by Degrees</a>
-                                        <ul class="dropdown-menu">
-                                            <li><a class="dropdown-item" href="#">MBBS</a></li>
-                                            <li><a class="dropdown-item" href="#">BDS</a></li>
-                                            <li><a class="dropdown-item" href="#">BAMS</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="dropdown-submenu">
-                                        <a class="dropdown-item dropdown-toggle" href="#">Top Colleges</a>
-                                        <ul class="dropdown-menu">
-                                            <li><a class="dropdown-item" href="#">AIIMS Delhi</a></li>
-                                            <li><a class="dropdown-item" href="#">CMC Vellore</a></li>
-                                            <li><a class="dropdown-item" href="#">JIPMER</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="dropdown-submenu">
-                                        <a class="dropdown-item dropdown-toggle" href="#">Top Universities</a>
-                                        <ul class="dropdown-menu">
-                                            <li><a class="dropdown-item" href="#">Harvard Medical School</a></li>
-                                            <li><a class="dropdown-item" href="#">Johns Hopkins University</a></li>
-                                            <li><a class="dropdown-item" href="#">Mayo Clinic</a></li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="nav-item"><a class="nav-link" href="#">WORKSHOP</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">BLOG</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">NEWS</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">CONTACT US</a></li>
-                    <li class="nav-item"><a class="nav-link btn btn-warning text-dark" href="https://forms.gle/tLpWZFBeUBQrZ1ag7">LOGIN</a></li>
-                </ul>
-            </div>
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="#" class="logo">
+                <img src="./images/Enroll Now logo.png" alt="Enroll Now">
+            </a>
+            <div class="menu-icon" onclick="toggleMenu()">☰</div>
+            <ul class="nav-links">
+                <li><a href="./index.html">Home</a></li>
+                <li><a href="#">Courses</a></li>
+                <li class="dropdown">
+                    <a href="#">Institutes ▾</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="./details.html">Colleges</a></li>
+                        <li><a href="./details.html">Schools</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Updates</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="./register.html">register</a></li>
+            </ul>
         </div>
     </nav>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            // Enable click to open submenus on mobile
-            document.querySelectorAll('.dropdown-submenu > a').forEach(item => {
-                item.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    let submenu = this.nextElementSibling;
-                    if (submenu) {
-                        submenu.classList.toggle("show");
-                    }
-                });
-            });
 
-            // Close dropdowns when clicking outside
-            document.addEventListener("click", function(e) {
-                if (!e.target.closest(".dropdown")) {
-                    document.querySelectorAll(".dropdown-menu.show").forEach(menu => {
-                        menu.classList.remove("show");
-                    });
-                }
-            });
-        });
-    </script>
+    
+    
+    <header class="hero-section">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1 class="fade-in">Your Gateway to Top Schools & Colleges</h1>
+            <p class="slide-up">Find and Apply to the Best Educational Institutions with Ease</p>
+            <div class="hero-buttons">
+                <a href="#" class="btn primary-btn">Explore Admissions</a>
+                <a href="#" class="btn secondary-btn">Join as an Institution</a>
+            </div>
+            <div class="search-bar">
+                <input type="text" placeholder="Search Schools, Colleges..." />
+                <button class="search-btn">Search</button>
+            </div>
+        </div>
+    </header>
+    
 
 
 
+<div class="process">
+    <h2>Finding the Right College Made Easy</h2>
+    <p>Our streamlined process guides you every step of the way.</p>
 
+    <div class="process-steps">
+        <button>Register</button>
+        <button>Choose Course</button>
+        <button>Submit Application</button>
+        <button>Upload Documents</button>
+        <button>Make Payment</button>
+        <button>Admission Confirmed</button>
+    </div>
 
-    <div class="banner">
-        <div class="banner-content">
-            <h1>Welcome to AdmissionEnquiry</h1>
-            <p>Your Trusted Guide for Admission Support & Career Growth</p>
-
-            <div class="cta-buttons">
-                <a href="#">Explore Courses</a>
-                <a href="#">Contact Us</a>
+    <div class="feature-container">
+        <div class="feature-box" style="background-color: rgba(0, 255, 255, 0.327);">
+            <i class="fas fa-user-graduate" style="color: #2163d5;"></i>
+            <div class="feature-text">
+                <h3>Career Guidance</h3>
+                <p>Explore personalized career paths tailored to your skills.</p>
+            </div>
+        </div>
+        <div class="feature-box" style="background-color: rgba(210, 39, 71, 0.327);">
+            <i class="fas fa-file-alt" style="color: #2163d5;"></i>
+            <div class="feature-text">
+                <h3>One Application for 2000+ Colleges</h3>
+                <p>Apply to multiple esteemed colleges with one form.</p>
+            </div>
+        </div>
+        <div class="feature-box" style="background-color: rgba(7, 169, 75, 0.327);">
+            <i class="fas fa-tasks" style="color: #2163d5;"></i>
+            <div class="feature-text">
+                <h3>Track Your Applications</h3>
+                <p>Manage all your applications in one place.</p>
+            </div>
+        </div>
+        <div class="feature-box" style="background-color: rgba(219, 130, 28, 0.327);">
+            <i class="fas fa-comments" style="color: #2163d5;"></i>
+            <div class="feature-text">
+                <h3>Admission Counseling</h3>
+                <p>Get expert advice from admission consultants.</p>
+            </div>
+        </div>
+        <div class="feature-box" style="background-color: rgba(189, 205, 17, 0.327);">
+            <i class="fas fa-clock" style="color: #2163d5;"></i>
+            <div class="feature-text">
+                <h3>Quick Process</h3>
+                <p>Complete your application in just a few minutes.</p>
+            </div>
+        </div>
+        <div class="feature-box" style="background-color: rgba(239, 53, 12, 0.327);">
+            <i class="fas fa-award" style="color: #2163d5;"></i>
+            <div class="feature-text">
+                <h3>Scholarships & Rewards</h3>
+                <p>Earn rewards and scholarships while applying.</p>
             </div>
         </div>
     </div>
 
-
-
-    <section class="about-us">
-        <h2>About Us</h2>
-        <div class="about-container">
-            <div class="about-item">
-                <i class="fas fa-university"></i>
-                <h3>Find Best Institute</h3>
-                <p>100+ colleges and universities in India.</p>
-            </div>
+    <div style="display: flex; justify-content:center;">
+    <button class="get-started">Get Started</button>
+</div>
+</div>
     
-            <div class="about-item">
-                <i class="fas fa-graduation-cap"></i>
-                <h3>Find Best Degree</h3>
-                <p>100+ UGC/council-recognized courses.</p>
-            </div>
-    
-            <div class="about-item">
-                <i class="fas fa-book"></i>
-                <h3>Explore Tests</h3>
-                <p>100+ online courses and study material.</p>
-            </div>
-    
-            <div class="about-item">
-                <i class="fas fa-building"></i>
-                <h3>Get Satisfied</h3>
-                <p>2500+ satisfied students in India.</p>
-            </div>
-        </div>
-    </section>
 
 
 
-    <section class="finder-section">
-        <div class="finder-wrapper">
-          <h2 class="finder-heading">Find Your Best Course With Us</h2>
-          <div class="finder-toggle-buttons">
-            <button class="finder-btn finder-active" onclick="showFinder('courses')">Top Courses</button>
-            <button class="finder-btn" onclick="showFinder('universities')">Top Universities</button>
-          </div>
-      
-          <div id="courses-list" class="finder-grid">
-            <button class="finder-item">MBBS</button>
-            <button class="finder-item">BDS</button>
-            <button class="finder-item">BAMS</button>
-            <button class="finder-item">BHMS</button>
-            <button class="finder-item">M.Tech</button>
-            <button class="finder-item">B.Tech</button>
-            <button class="finder-item">MBA</button>
-            <button class="finder-item">PGDM</button>
-            <button class="finder-item">BBA</button>
-            <button class="finder-item">MCA</button>
-            <button class="finder-item">BCA</button>
-            <button class="finder-item">B.Sc Nursing</button>
-            <button class="finder-item">M.Sc Nursing</button>
-            <button class="finder-item">P.B. Nursing</button>
-            <button class="finder-item">LLB</button>
-            <button class="finder-item">B.Ed</button>
-            <button class="finder-item">B.Design</button>
-            <button class="finder-item">Ph.D (Management)</button>
-            <button class="finder-item">Ph.D (Law)</button>
-            <button class="finder-item">Ph.D (Science)</button>
-          </div>
-      
-          <div id="universities-list" class="finder-grid hidden">
-            <button class="finder-item">Harvard University</button>
-            <button class="finder-item">Stanford University</button>
-            <button class="finder-item">MIT</button>
-            <button class="finder-item">University of Oxford</button>
-            <button class="finder-item">University of Cambridge</button>
-            <button class="finder-item">Yale University</button>
-            <button class="finder-item">Columbia University</button>
-            <button class="finder-item">Princeton University</button>
-            <button class="finder-item">Caltech</button>
-            <button class="finder-item">Imperial College London</button>
-            <button class="finder-item">National University of Singapore</button>
-            <button class="finder-item">ETH Zurich</button>
-            <button class="finder-item">University of Toronto</button>
-            <button class="finder-item">University of Melbourne</button>
-          </div>
+<section class="top-colleges">
+    <h2>Top Colleges & Universities</h2>
+    <div class="college-wrapper">
+        <div class="college-card">
+            <img src="./images/1 (1).png" alt="College 1">
+            <h4>XYZ University</h4>
+            <p>New York, USA</p>
         </div>
-      </section>
-      
-      
- <!-- Add FontAwesome for icons -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-
-<section class="partners-section">
-    <h2>Our Partner</h2>
-    <p>Leading Universities & Colleges</p>
-
-    <div class="tabs">
-        <button class="tab active">Top Universities</button>
-        <button class="tab">Top Colleges</button>
-        <button class="tab">Distance Education</button>
-        <button class="tab">Online Education</button>
-    </div>
-
-    <div class="partner-list">
-        <div class="partner-card">
-            <i class="fas fa-university"></i>
-            <p>University A</p>
+        <div class="college-card">
+            <img src="./images/1 (1).png" alt="College 1">
+            <h4>XYZ University</h4>
+            <p>New York, USA</p>
         </div>
-        <div class="partner-card">
-            <i class="fas fa-graduation-cap"></i>
-            <p>University B</p>
+        <div class="college-card">
+            <img src="./images/1 (1).png" alt="College 1">
+            <h4>XYZ University</h4>
+            <p>New York, USA</p>
         </div>
-        <div class="partner-card">
-            <i class="fas fa-school"></i>
-            <p>University C</p>
+        <div class="college-card">
+            <img src="./images/1 (1).png" alt="College 1">
+            <h4>XYZ University</h4>
+            <p>New York, USA</p>
         </div>
-        <div class="partner-card">
-            <i class="fas fa-building"></i>
-            <p>College X</p>
+        <div class="college-card">
+            <img src="./images/1 (1).png" alt="College 1">
+            <h4>XYZ University</h4>
+            <p>New York, USA</p>
         </div>
-        <div class="partner-card">
-            <i class="fas fa-chalkboard-teacher"></i>
-            <p>College Y</p>
+        <div class="college-card">
+            <img src="./images/1 (1).png" alt="College 1">
+            <h4>XYZ University</h4>
+            <p>New York, USA</p>
         </div>
-        <div class="partner-card">
-            <i class="fas fa-book"></i>
-            <p>College Z</p>
+        <div class="college-card">
+            <img src="https://via.placeholder.com/80" alt="College 2">
+            <h4>ABC Institute</h4>
+            <p>London, UK</p>
+        </div>
+        <div class="college-card">
+            <img src="https://via.placeholder.com/80" alt="College 3">
+            <h4>LMN College</h4>
+            <p>Sydney, Australia</p>
         </div>
     </div>
 </section>
 
-    
 
 
-<!-- FontAwesome Icons -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 
-<section class="education-news">
-    <h2>Education News <br> <a href="#" class="view-all">VIEW ALL</a></h2>
 
-    <div class="tab-menu">
-        <button class="active">Admission Notification</button>
-        <button>Education News</button>
-        <button>Entrance Exam Notification</button>
-        <button>Others</button>
+
+
+<div class="testimonials">
+    <h2>What Our Students Say</h2>
+    <div class="testimonial-container">
+        <div class="testimonial-box">
+            <img src="./images/man_4140048.png" alt="Student">
+            <div class="testimonial-text">
+                <p>"This platform made my admission process seamless! Highly recommend."</p>
+                <h4>— Jane Doe</h4>
+            </div>
+        </div>
+        <div class="testimonial-box">
+            <img src="./images/man_4140048.png" alt="Student">
+            <div class="testimonial-text">
+                <p>"The career guidance was exceptional. Helped me choose the right path!"</p>
+                <h4>— John Smith</h4>
+            </div>
+        </div>
     </div>
+</div>
 
+
+
+
+<section class="news-section">
+    <h2>Latest Educational News & Updates</h2>
     <div class="news-grid">
         <div class="news-card">
-            <i class="fas fa-university"></i>
-            <div class="news-content">
-                <h3>Nalanda University Admissions 2024</h3>
-                <p>Nalanda University reopens with new international programs and facilities.</p>
-            </div>
+            <img src="./images/2 (1).png" alt="News 1">
+            <h4>Govt Announces New Scholarship Program</h4>
+            <p>Students across various disciplines can now apply for new merit-based scholarships.</p>
+            <a href="#" class="read-more">Read More</a>
         </div>
-
         <div class="news-card">
-            <i class="fas fa-user-graduate"></i>
-            <div class="news-content">
-                <h3>SAGE University Bhopal Applications Open</h3>
-                <p>Admissions for UG & PG courses now available at SAGE University.</p>
-            </div>
+            <img src="./images/7.png" alt="News 2">
+            <h4>Top Universities in 2025 - Rankings Released</h4>
+            <p>Check out the latest rankings of the top universities across the globe.</p>
+            <a href="#" class="read-more">Read More</a>
         </div>
-
         <div class="news-card">
-            <i class="fas fa-book-reader"></i>
-            <div class="news-content">
-                <h3>TVS Cheema Scholarship for Tamil Nadu Students</h3>
-                <p>TVS Motor launches a new scholarship program for engineering students.</p>
-            </div>
+            <img src="./images/4.png" alt="News 3">
+            <h4>Online Learning - The Future of Education?</h4>
+            <p>Experts discuss how online education is shaping the future of learning worldwide.</p>
+            <a href="#" class="read-more">Read More</a>
         </div>
+    </div>
+</section>
 
-        <div class="news-card">
-            <i class="fas fa-school"></i>
-            <div class="news-content">
-                <h3>Centurion University in Top Academic List</h3>
-                <p>Odisha’s Centurion University recognized among top institutions.</p>
-            </div>
-        </div>
+
+
+
+
+<section class="enquiry-section">
+    <div class="enquiry-image">
+        <img src="./images/1 (1).png" alt="Enquiry Image">
+    </div>
+    <div class="enquiry-form-container">
+        <h2>Enquiry Form</h2>
+        <form class="enquiry-form">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+            
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email" required>
+            
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+            
+            <label for="course">Interested Course</label>
+            <select id="course" name="course" required>
+                <option value="">Select Course</option>
+                <option value="engineering">Engineering</option>
+                <option value="medical">Medical</option>
+                <option value="business">Business</option>
+                <option value="arts">Arts</option>
+            </select>
+            
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="4" placeholder="Enter your message" required></textarea>
+            
+            <button type="submit">Submit Enquiry</button>
+        </form>
     </div>
 </section>
 
@@ -333,7 +264,7 @@
             <!-- About Us -->
             <div class="footer-col">
                 <h3>About Us</h3>
-                <img src="your-logo.png" alt="Logo" class="footer-logo">
+                <img src="./images/Enroll Now logo.png" alt="Logo" class="footer-logo" height="80px">
                 <p>
                     Our platform provides top-quality education and career resources to help students and professionals achieve their goals.
                 </p>
@@ -377,7 +308,7 @@
             <div class="footer-col">
                 <h3>Get in Touch</h3>
                 <p><i class="fas fa-map-marker-alt"></i> 123 Main Street, City, Country</p>
-                <p><i class="fas fa-phone-alt"></i> +91 98765 43210</p>
+                <p><i class="fas fa-phone-alt"></i> +91 00000 00000</p>
                 <p><i class="fas fa-envelope"></i> contact@yourwebsite.com</p>
                 <img src="world-map.png" alt="World Map" class="footer-map">
             </div>
@@ -392,8 +323,6 @@
 <!-- FontAwesome Icons -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 
-    
-      <script src="./scripts.js"></script>
-
+<script src="./script.js"></script>
 </body>
 </html>

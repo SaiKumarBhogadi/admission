@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>College Registration & Student Application</title>
+    <link rel="stylesheet" href="./home.css">
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #f4f4ff;
+            text-align: center;
+        }
+
+        /* Hero Section */
+        .hero-banner {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('./images/group-diverse-grads-throwing-caps-up-sky.jpg') center/cover no-repeat;
+            height: 70vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            padding: 20px;
+        }
+
+        .hero-content-box h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .hero-content-box p {
+            font-size: 1.2rem;
+        }
+
+        /* Forms Section */
+        .registration-section {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            padding: 40px;
+        }
+
+        .form-container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            width: 400px;
+            max-width: 100%;
+        }
+
+        .form-container h2 {
+            color: #3b3bff;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        input, select {
+            padding: 8px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            margin-top: 5px;
+        }
+
+        button {
+            background: #3b3bff;
+            color: white;
+            border: none;
+            padding: 10px;
+            margin-top: 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background: #2929d9;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .registration-section {
+                flex-direction: column;
+                align-items: center;
+            }
+            .form-container {
+                background: white;
+                padding: 20px;
+                border-radius: 10px;
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+                width: 400px;
+                max-width: 90%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="#" class="logo">
+                <img src="./images/Enroll Now logo.png" alt="Enroll Now">
+            </a>
+            <div class="menu-icon" onclick="toggleMenu()">☰</div>
+            <ul class="nav-links">
+                <li><a href="./index.html">Home</a></li>
+                <li><a href="#">Courses</a></li>
+                <li class="dropdown">
+                    <a href="#">Institutes ▾</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="./details.html">Colleges</a></li>
+                        <li><a href="./details.html">Schools</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Updates</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="./register.html">register</a></li>
+            </ul>
+        </div>
+    </nav>
+    <!-- Hero Section -->
+    <section class="hero-banner">
+        <div class="hero-content-box">
+            <h1>Register Your College & Apply for Admissions</h1>
+            <p>Join our platform to connect with students and institutions.</p>
+        </div>
+    </section>
+
+    <!-- Registration & Application Section -->
+    <section class="registration-section">
+        <div class="form-container">
+            <h2>Institution Registration</h2>
+            <form id="collegeForm">
+                <label for="college-name">Institution Name:</label>
+                <input type="text" id="college-name" name="college-name" required>
+                
+                <label for="location">Location:</label>
+                <input type="text" id="location" name="location" required>
+                
+                <label for="courses">Available Courses:</label>
+                <input type="text" id="courses" name="courses" required>
+                
+                <label for="contact">Contact Info:</label>
+                <input type="text" id="contact" name="contact" required>
+                
+                <label for="logo">Upload Institution Logo:</label>
+                <input type="file" id="logo" name="logo" accept="image/*" required>
+                
+                <label for="brochure">Upload Brochure:</label>
+                <input type="file" id="brochure" name="brochure" accept="application/pdf" required>
+                
+                <button type="submit">Register Institution</button>
+            </form>
+        </div>
+
+        <div class="form-container">
+            <h2>Student Application</h2>
+            <form id="studentForm">
+                <label for="student-name">Student Name:</label>
+                <input type="text" id="student-name" name="student-name" required>
+                
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                
+                <label for="phone">Phone:</label>
+                <input type="text" id="phone" name="phone" required>
+                
+                <label for="select-college">Select College:</label>
+                <select id="select-college" name="select-college">
+                    <option value="XYZ University">XYZ University</option>
+                    <option value="ABC College">ABC College</option>
+                    <option value="LMN Institute">LMN Institute</option>
+                </select>
+                
+                <label for="course">Preferred Course:</label>
+                <input type="text" id="course" name="course" required>
+                
+                <label for="documents">Upload Documents (Mark Sheets, ID Proof, etc.):</label>
+                <input type="file" id="documents" name="documents" multiple required>
+                
+                <button type="submit">Apply Now</button>
+            </form>
+        </div>
+    </section>
+
+    <script>
+        document.getElementById("collegeForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            alert("College registered successfully!");
+        });
+
+        document.getElementById("studentForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            alert("Application submitted successfully!");
+        });
+    </script>
+
+
+    <footer class="custom-footer">
+        <div class="footer-wrapper">
+            <div class="footer-row">
+                <!-- About Us -->
+                <div class="footer-col">
+                    <h3>About Us</h3>
+                    <img src="./images/Enroll Now logo.png" alt="Logo" class="footer-logo" height="80px">
+                    <p>
+                        Our platform provides top-quality education and career resources to help students and professionals achieve their goals.
+                    </p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-google"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+    
+                <!-- Useful Links -->
+                <div class="footer-col">
+                    <h3>Useful Links</h3>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms & Conditions</a></li>
+                        <li><a href="#">Career Opportunities</a></li>
+                        <li><a href="#">FAQs</a></li>
+                        <li><a href="#">Downloads</a></li>
+                    </ul>
+                </div>
+    
+                <!-- Quick Links -->
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#">University Admissions</a></li>
+                        <li><a href="#">Online Courses</a></li>
+                        <li><a href="#">Scholarships</a></li>
+                        <li><a href="#">Education News</a></li>
+                        <li><a href="#">Internships</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                    </ul>
+                </div>
+    
+                <!-- Contact Information -->
+                <div class="footer-col">
+                    <h3>Get in Touch</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> 123 Main Street, City, Country</p>
+                    <p><i class="fas fa-phone-alt"></i> +91 00000 00000</p>
+                    <p><i class="fas fa-envelope"></i> contact@yourwebsite.com</p>
+                    <img src="world-map.png" alt="World Map" class="footer-map">
+                </div>
+            </div>
+        </div>
+    
+        <div class="footer-bottom">
+            <p>Copyright © 2025 Your Website. All Rights Reserved.</p>
+        </div>
+    </footer>
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <script src="./script.js"></script>
+</body>
+</html>

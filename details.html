@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registered Colleges & Schools</title>
+    <link rel="stylesheet" href="./home.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <style>
+        /* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #f4f4ff;
+}
+
+/* Hero Section */
+.hero-banner {
+    background: url('./images/840.jpg') center/cover no-repeat;
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    position: relative;
+    padding: 20px;
+}
+
+.hero-banner::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.hero-content-box {
+    position: relative;
+    z-index: 2;
+    max-width: 600px;
+    text-align: center;
+}
+
+.hero-content-box h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.hero-content-box p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+.discover-btn {
+    display: inline-block;
+    background: #3b3bff;
+    color: white;
+    padding: 12px 20px;
+    font-size: 1rem;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.discover-btn:hover {
+    background: #2929d9;
+}
+
+/* Filter Buttons */
+.filter-container {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.filter-btn {
+    background: #3b3bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.filter-btn:hover, .filter-btn.active {
+    background: #2929d9;
+}
+
+/* Institutions Section */
+.institutions-section {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.institutions-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    max-width: 1100px;
+    margin: auto;
+}
+
+/* Institution Card */
+.institution-card {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+    position: relative;
+    width: 100%;
+    max-width: 300px;
+    margin: auto;
+}
+
+.institution-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Seats Info (Initially Hidden) */
+.seats-info {
+    display: none;
+    margin-top: 10px;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    border-radius: 5px;
+    text-align: center;
+}
+
+/* Show when active */
+.seats-info.active {
+    display: block;
+}
+
+/* Table Styling */
+.seats-info table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.seats-info th, .seats-info td {
+    border: 1px solid white;
+    padding: 5px;
+    text-align: center;
+}
+
+.seats-info th {
+    background: #3b3bff;
+}
+
+/* View Seats Button */
+.view-seats-btn {
+    background: #ff8c00;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    margin-top: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.view-seats-btn:hover {
+    background: #e67e00;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .institutions-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .institutions-container {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="#" class="logo">
+                <img src="./images/Enroll Now logo.png" alt="Enroll Now">
+            </a>
+            <div class="menu-icon" onclick="toggleMenu()">☰</div>
+            <ul class="nav-links">
+                <li><a href="./index.html">Home</a></li>
+                <li><a href="#">Courses</a></li>
+                <li class="dropdown">
+                    <a href="#">Institutes ▾</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="./details.html">Colleges</a></li>
+                        <li><a href="./details.html">Schools</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Updates</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="./register.html">register</a></li>
+            </ul>
+        </div>
+    </nav>
+    <!-- Hero Section with Animation and Styling -->
+    <section class="hero-banner">
+        <div class="hero-overlay"></div>
+        <div class="hero-content-box">
+            <h1 class="fade-in">Find the Best Colleges & Schools</h1>
+            <p class="slide-up">Browse top institutions and apply before deadlines!</p>
+            <a href="#registered-institutions" class="discover-btn bounce">Explore Now</a>
+        </div>
+    </section>
+
+    <!-- Filter Buttons -->
+    <div class="filter-container">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="college">Colleges</button>
+        <button class="filter-btn" data-filter="school">Schools</button>
+    </div>
+
+    <!-- Registered Colleges & Schools -->
+    <section id="registered-institutions" class="institutions-section">
+        <h2>Registered Colleges & Schools</h2>
+        <div class="institutions-container">
+            <!-- College Card -->
+            <div class="institution-card college">
+                <img src="./images/10095640.jpg" alt="College Logo" height="100px">
+                <h3>XYZ University</h3>
+                <p>Available Courses: Computer Science, Business, Arts</p>
+                <p class="deadline-highlight">Deadline: March 30, 2025</p>
+                <a href="#" class="apply-now-btn">Apply Now</a>
+                <button class="view-seats-btn">View Seats</button>
+                <div class="seats-info hidden">
+                    <table>
+                        <tr><th>Branch</th><th>Seats</th></tr>
+                        <tr><td>Computer Science</td><td>50</td></tr>
+                        <tr><td>Business</td><td>40</td></tr>
+                        <tr><td>Arts</td><td>30</td></tr>
+                    </table>
+                </div>
+            </div>
+
+            <div class="institution-card college">
+                <img src="./images/10095640.jpg" alt="College Logo" height="100px">
+                <h3>XYZ University</h3>
+                <p>Available Courses: Computer Science, Business, Arts</p>
+                <p class="deadline-highlight">Deadline: March 30, 2025</p>
+                <a href="#" class="apply-now-btn">Apply Now</a>
+                <button class="view-seats-btn">View Seats</button>
+                <div class="seats-info hidden">
+                    <table>
+                        <tr><th>Branch</th><th>Seats</th></tr>
+                        <tr><td>Computer Science</td><td>50</td></tr>
+                        <tr><td>Business</td><td>40</td></tr>
+                        <tr><td>Arts</td><td>30</td></tr>
+                    </table>
+                </div>
+            </div>
+
+            <div class="institution-card college">
+                <img src="./images/10095640.jpg" alt="College Logo" height="100px">
+                <h3>XYZ University</h3>
+                <p>Available Courses: Computer Science, Business, Arts</p>
+                <p class="deadline-highlight">Deadline: March 30, 2025</p>
+                <a href="#" class="apply-now-btn">Apply Now</a>
+                <button class="view-seats-btn">View Seats</button>
+                <div class="seats-info hidden">
+                    <table>
+                        <tr><th>Branch</th><th>Seats</th></tr>
+                        <tr><td>Computer Science</td><td>50</td></tr>
+                        <tr><td>Business</td><td>40</td></tr>
+                        <tr><td>Arts</td><td>30</td></tr>
+                    </table>
+                </div>
+            </div>
+
+            <div class="institution-card college">
+                <img src="./images/10095640.jpg" alt="College Logo" height="100px">
+                <h3>XYZ University</h3>
+                <p>Available Courses: Computer Science, Business, Arts</p>
+                <p class="deadline-highlight">Deadline: March 30, 2025</p>
+                <a href="#" class="apply-now-btn">Apply Now</a>
+                <button class="view-seats-btn">View Seats</button>
+                <div class="seats-info hidden">
+                    <table>
+                        <tr><th>Branch</th><th>Seats</th></tr>
+                        <tr><td>Computer Science</td><td>50</td></tr>
+                        <tr><td>Business</td><td>40</td></tr>
+                        <tr><td>Arts</td><td>30</td></tr>
+                    </table>
+                </div>
+            </div>
+
+            <div class="institution-card college">
+                <img src="./images/10095640.jpg" alt="College Logo" height="100px">
+                <h3>XYZ University</h3>
+                <p>Available Courses: Computer Science, Business, Arts</p>
+                <p class="deadline-highlight" style="color: red;">Deadline: March 30, 2025</p>
+                <a href="#" class="apply-now-btn">Apply Now</a>
+                <button class="view-seats-btn">View Seats</button>
+                <div class="seats-info hidden">
+                    <table>
+                        <tr><th>Branch</th><th>Seats</th></tr>
+                        <tr><td>Computer Science</td><td>50</td></tr>
+                        <tr><td>Business</td><td>40</td></tr>
+                        <tr><td>Arts</td><td>30</td></tr>
+                    </table>
+                </div>
+            </div>
+
+            <!-- School Card -->
+            <div class="institution-card school">
+                <img src="https://via.placeholder.com/100" alt="School Logo">
+                <h3>ABC High School</h3>
+                <p>Classes: 1st - 10th Grade</p>
+                <p class="deadline-highlight">Deadline: April 15, 2025</p>
+                <a href="#" class="apply-now-btn">Apply Now</a>
+                <button class="view-seats-btn">View Seats</button>
+                <div class="seats-info hidden">
+                    <table>
+                        <tr><th>Class</th><th>Seats</th></tr>
+                        <tr><td>1st Grade</td><td>40</td></tr>
+                        <tr><td>2nd Grade</td><td>35</td></tr>
+                        <tr><td>3rd Grade</td><td>30</td></tr>
+                        <tr><td>4th - 10th</td><td>25 Each</td></tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const filterButtons = document.querySelectorAll(".filter-btn");
+            const institutionCards = document.querySelectorAll(".institution-card");
+            const viewSeatsButtons = document.querySelectorAll(".view-seats-btn");
+        
+            // Filter Institutions
+            filterButtons.forEach(button => {
+                button.addEventListener("click", () => {
+                    const filterValue = button.getAttribute("data-filter");
+        
+                    // Remove active class from all buttons
+                    filterButtons.forEach(btn => btn.classList.remove("active"));
+                    button.classList.add("active");
+        
+                    // Filter institutions
+                    institutionCards.forEach(card => {
+                        if (filterValue === "all") {
+                            card.style.display = "block";
+                        } else {
+                            card.style.display = card.classList.contains(filterValue) ? "block" : "none";
+                        }
+                    });
+                });
+            });
+        
+            // Toggle Seat Availability
+            viewSeatsButtons.forEach(button => {
+                button.addEventListener("click", function () {
+                    const seatsInfo = this.nextElementSibling;
+                    seatsInfo.classList.toggle("active");
+        
+                    // Change button text
+                    if (seatsInfo.classList.contains("active")) {
+                        this.textContent = "Hide Seats";
+                    } else {
+                        this.textContent = "View Seats";
+                    }
+                });
+            });
+        });
+        
+    </script>
+
+
+
+    <footer class="custom-footer">
+        <div class="footer-wrapper">
+            <div class="footer-row">
+                <!-- About Us -->
+                <div class="footer-col">
+                    <h3>About Us</h3>
+                    <img src="./images/Enroll Now logo.png" alt="Logo" class="footer-logo" height="80px">
+                    <p>
+                        Our platform provides top-quality education and career resources to help students and professionals achieve their goals.
+                    </p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-google"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+    
+                <!-- Useful Links -->
+                <div class="footer-col">
+                    <h3>Useful Links</h3>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms & Conditions</a></li>
+                        <li><a href="#">Career Opportunities</a></li>
+                        <li><a href="#">FAQs</a></li>
+                        <li><a href="#">Downloads</a></li>
+                    </ul>
+                </div>
+    
+                <!-- Quick Links -->
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#">University Admissions</a></li>
+                        <li><a href="#">Online Courses</a></li>
+                        <li><a href="#">Scholarships</a></li>
+                        <li><a href="#">Education News</a></li>
+                        <li><a href="#">Internships</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                    </ul>
+                </div>
+    
+                <!-- Contact Information -->
+                <div class="footer-col">
+                    <h3>Get in Touch</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> 123 Main Street, City, Country</p>
+                    <p><i class="fas fa-phone-alt"></i> +91 00000 00000</p>
+                    <p><i class="fas fa-envelope"></i> contact@yourwebsite.com</p>
+                    <img src="world-map.png" alt="World Map" class="footer-map">
+                </div>
+            </div>
+        </div>
+    
+        <div class="footer-bottom">
+            <p>Copyright © 2025 Your Website. All Rights Reserved.</p>
+        </div>
+    </footer>
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <script src="script.js"></script>
+</body>
+</html>
